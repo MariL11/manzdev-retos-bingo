@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to top, #0b142c, #2455c0) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.container{
+    margin-bottom:10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "player drum cpu"
+        "marks marks marks";
+}
+
+.container > div{
+    margin: 2rem;
+}
+
+.drum {
+    grid-area: drum;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #eeeeee, grey);
+    border: 4px solid black;
+    border-radius: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.number{
+    border: 2px solid grey;
+    font-size: larger;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+}
+
+.player {
+    grid-area: player;
+}
+
+.cpu {
+    grid-area: cpu;
+}
+
+.card{
+    background-color: #9e1c23;
+    height: 225px;
+    width: 300px;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #eeeeee;
+}
+
+.card > div{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.square{
+    margin: 1rem;
+    background-color: #eeeeee;
+    color: black;
+    height: 50%;
+    width: 50%;
+    text-align: center;
+}
+
+
+.marks {
+    height: 50%;
+    width: 95%;
+    grid-area: marks;
+    border: 2px solid white;
+    
+}
+
