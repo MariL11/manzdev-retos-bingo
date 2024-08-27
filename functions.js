@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     shuffled(numbersCardboardMarks);
 
-    let number = document.querySelector(".number");
+    let numberLabel = document.querySelector(".number");
     let marks = document.querySelector(".marks");
     let count = 0;
 
@@ -43,25 +43,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     }
-
-    function winner(){
+    
+    /*
+    function winner() {
         
-    }
+        const allMarked = numbersCardboardPlayer.every(element => 
+            element.classList.contains('markedSquare')
+        );
 
+        
+        console.log("Todos los elementos marcados:", allMarked);
+        console.log("Contenido de numbersCardboardPlayer:", numbersCardboardPlayer);
 
-    number.addEventListener('click', function() {
+        if (allMarked) {
+            numberLabel.innerHTML = "hgg"; 
+            alert("edd");
+        }
+    }*/
 
-        if(count !== 90){
+    numberLabel.addEventListener('click', function() {
+        if (count !== 90) {
             let randomNumber = numbersCardboardMarks[count++];
         
-            number.textContent = randomNumber;
+            numberLabel.textContent = randomNumber;
             addNumber(randomNumber);
             checkNumbers(randomNumber);
 
             console.log(count);
             console.log(numbersCardboardMarks);
-        }
 
+            
+            winner();
+        }
     });
 
     function checkNumbers(number) {

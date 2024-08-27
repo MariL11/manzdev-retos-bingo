@@ -69,7 +69,7 @@ body {
 
 .title{
     text-transform: uppercase;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .numbers{
@@ -113,5 +113,6 @@ body {
 .markedSquare{
     background-color:  #9e1c23;
     text-decoration: line-through;
+    border: 1px solid black;
 }
 
