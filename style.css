@@ -5,8 +5,7 @@
 }
 
 body {
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
     background: linear-gradient(to top, #0b142c, #2455c0) no-repeat;
     background-size: cover;
     display: flex;
@@ -95,7 +94,6 @@ body {
 
 .marks {
     height: 17rem;
-    width: 73rem;
     grid-area: marks;
     border: 2px solid white;
     display: flex;
