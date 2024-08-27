@@ -17,15 +17,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!array.includes(randomNumber)) {
                 array.push(randomNumber);
 
-                let div1 = document.createElement('div');
-                let div2= document.createElement('div');
-                
-                div1.appendChild(div2);
-                div2.textContent = randomNumber;     
-                div2.classList.add('square');         
+                div = document.createElement('div');   
+          
+                div.textContent = randomNumber;     
+                div.classList.add('square');         
 
                 if (card) {
-                    card.appendChild(div2);
+                    card.appendChild(div);
                 } else {
                     console.error("Player card element not found.");
                 }
