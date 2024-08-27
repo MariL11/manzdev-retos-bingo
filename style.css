@@ -110,3 +110,8 @@ body {
     height: 17%;
 }
 
+.markedSquare{
+    background-color:  #9e1c23;
+    text-decoration: line-through;
+}
+

@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let playerDiv = document.createElement('div');
 
     const numbersCardboardCPU = [];
-    let CPU_Card = document.querySelector(".cpu.numbers");
-    let CPU_Div = document.createElement('div');
+    let cpuCard = document.querySelector(".cpu.numbers");
+    let cpuDiv = document.createElement('div');
 
     const numbersCardboardMarks = [];
     for (let i = 1; i <= 90; i++) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let count = 0;
 
     createCard(playerCard, playerDiv, numbersCardboardPlayer);
-    createCard(CPU_Card, CPU_Div, numbersCardboardCPU);
+    createCard(cpuCard, cpuDiv, numbersCardboardCPU);
 
     function createCard(card, div, array) {
         while (array.length < 15) {
@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 div = document.createElement('div');   
           
                 div.textContent = randomNumber;     
-                div.classList.add('square');         
+                div.classList.add('square');    
+                div.dataset.number = randomNumber;     
 
                 if (card) {
                     card.appendChild(div);
@@ -43,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
+    function winner(){
+        
+    }
+
 
     number.addEventListener('click', function() {
 
@@ -51,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
             number.textContent = randomNumber;
             addNumber(randomNumber);
+            checkNumbers(randomNumber);
 
             console.log(count);
             console.log(numbersCardboardMarks);
@@ -58,6 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    function checkNumbers(number) {
+        let playerSquares = document.querySelectorAll(".player .numbers .square");
+        let cpuSquares = document.querySelectorAll(".cpu .numbers .square");
+
+        playerSquares.forEach(square => {
+            if (parseInt(square.dataset.number) === number) {
+                square.classList.add('markedSquare');
+            }
+        });
+
+        cpuSquares.forEach(square => {
+            if (parseInt(square.dataset.number) === number) {
+                square.classList.add('markedSquare');
+            }
+        });
+    }
     
     function addNumber(number){
 
