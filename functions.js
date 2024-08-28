@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let marks = document.querySelector(".marks");
     let count = 0;
 
+    let countMarkedSquarePlayer = 0;
+    let countMarkedSquareCpu = 0;
+
     createCard(playerCard, playerDiv, numbersCardboardPlayer);
     createCard(cpuCard, cpuDiv, numbersCardboardCPU);
 
@@ -43,39 +46,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     }
+
     
-    /*
-    function winner() {
-        
-        const allMarked = numbersCardboardPlayer.every(element => 
-            element.classList.contains('markedSquare')
-        );
-
-        
-        console.log("Todos los elementos marcados:", allMarked);
-        console.log("Contenido de numbersCardboardPlayer:", numbersCardboardPlayer);
-
-        if (allMarked) {
-            numberLabel.innerHTML = "hgg"; 
-            alert("edd");
-        }
-    }*/
-
     numberLabel.addEventListener('click', function() {
-        if (count !== 90) {
-            let randomNumber = numbersCardboardMarks[count++];
+        if(countMarkedSquarePlayer < 15 && countMarkedSquareCpu < 15){
+            if (count !== 90) {
+                let randomNumber = numbersCardboardMarks[count++];
+                
+                numberLabel.textContent = randomNumber;
+                addNumber(randomNumber);
+                checkNumbers(randomNumber);
         
-            numberLabel.textContent = randomNumber;
-            addNumber(randomNumber);
-            checkNumbers(randomNumber);
-
-            console.log(count);
-            console.log(numbersCardboardMarks);
-
-            
-            winner();
+                console.log(count);
+                console.log(numbersCardboardMarks);
+        
+                    
+                winner();
+            }
         }
     });
+
+
+    function winner() {
+
+        if(countMarkedSquarePlayer === 15){
+            numberLabel.innerHTML = "PLAYER WINS!"; 
+            numberLabel.style.cursor = 'default'; 
+        }else if(countMarkedSquareCpu === 15){
+            numberLabel.innerHTML = "CPU WINS!";
+            numberLabel.style.cursor = 'default';  
+        }
+    }
+    
+    
 
     function checkNumbers(number) {
         let playerSquares = document.querySelectorAll(".player .numbers .square");
@@ -84,12 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
         playerSquares.forEach(square => {
             if (parseInt(square.dataset.number) === number) {
                 square.classList.add('markedSquare');
+                countMarkedSquarePlayer++;
             }
         });
 
         cpuSquares.forEach(square => {
             if (parseInt(square.dataset.number) === number) {
                 square.classList.add('markedSquare');
+                countMarkedSquareCpu++;
             }
         });
     }
