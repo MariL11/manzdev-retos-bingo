@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(countMarkedSquarePlayer === 15){
             numberLabel.innerHTML = "PLAYER WINS!"; 
             numberLabel.style.cursor = 'default'; 
+            launchConfetti();
         }else if(countMarkedSquareCpu === 15){
             numberLabel.innerHTML = "CPU WINS!";
             numberLabel.style.cursor = 'default';  
@@ -114,6 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function shuffled(array){
 
         array.sort(() => Math.random() - 0.5);
+    }
+
+
+    function launchConfetti() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
     }
     
 });

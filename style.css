@@ -10,7 +10,7 @@ body {
     background-size: cover;
     display: flex;
     justify-content: center;
-    margin-top: 3em;
+
 }
 
 .container{
@@ -21,6 +21,8 @@ body {
         "player drum cpu"
         "marks marks marks";
     gap: 2em;
+    height: 90%;
+    
 }
 
 .container > div{
