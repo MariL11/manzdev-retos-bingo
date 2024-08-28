@@ -73,7 +73,6 @@ body {
     padding-top: 1em;
     text-align: center;
     color: #eeeeee;
-
 }
 
 .title{
@@ -105,8 +104,8 @@ body {
 
 .marks {
     grid-area: marks;
-    height: 25em;
-    width:75em;
+    height: 20.2em;
+    width:72.8em;
     border: 2px solid white;
     display: flex;
     flex-direction: row;
@@ -117,8 +116,8 @@ body {
 }
 
 .marks > div{
-    width: 7vh;
-    height: 7vh;
+    width: 3.5rem;
+    height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,7 +130,7 @@ body {
     border: 0.5px solid black;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1210px) {
 
     .container{
         display: flex;
@@ -151,7 +150,12 @@ body {
 
     .marks {
         height: 45%;
-        width:74%; 
+        width:78%; 
+    }
+
+    .marks > div{
+        width: 3.5rem;
+        height: 3em;
     }
  
 }
