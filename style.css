@@ -1,3 +1,9 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +16,7 @@ body {
     background-size: cover;
     display: flex;
     justify-content: center;
-
+    font-family: Montserrat;
 }
 
 .container{
@@ -33,7 +39,7 @@ body {
     grid-area: drum;
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, #eeeeee, grey);
+    background: radial-gradient(circle, #eeeeee 10%, grey 65%);
     border: 4px solid black;
     border-radius: 50em;
     display: flex;
@@ -80,7 +86,8 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    font-size: larger;
+    font-size: large;
+
 }
 
 
@@ -92,7 +99,7 @@ body {
     text-align: center;
     width: 16%;
     height: 16%;
-    font-weight: 100;
+    font-weight: 500;
 }
 
 
@@ -105,12 +112,13 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     align-content: start;
+    padding: 0.5em;
     
 }
 
 .marks > div{
-    width: 6%;
-    height: 14%;
+    width: 9vh;
+    height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,7 +128,7 @@ body {
 .markedSquare{
     background-color:  #9e1c23;
     text-decoration: line-through;
-    border: 1px solid black;
+    border: 0.5px solid black;
 }
 
 @media screen and (max-width: 1150px) {
@@ -143,15 +151,9 @@ body {
 
     .marks {
         height: 45%;
-        width:80%; 
+        width:84%; 
     }
 
-    
-    .marks > div{
-        width: 5vh;
-        height: 5vh;
-        font-size: large;
-    }
 
  
 }
