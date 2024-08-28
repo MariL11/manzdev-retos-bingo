@@ -105,8 +105,8 @@ body {
 
 .marks {
     grid-area: marks;
-    height: 21em;
-    width:69em;
+    height: 25em;
+    width:75em;
     border: 2px solid white;
     display: flex;
     flex-direction: row;
@@ -117,8 +117,8 @@ body {
 }
 
 .marks > div{
-    width: 9vh;
-    height: 9vh;
+    width: 7vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,9 +151,7 @@ body {
 
     .marks {
         height: 45%;
-        width:84%; 
+        width:74%; 
     }
-
-
  
 }
